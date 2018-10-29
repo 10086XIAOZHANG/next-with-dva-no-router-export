@@ -32,7 +32,6 @@ function createDvaStore(initialState) {
     app.router(() => {});
     app.start();
     // console.log(app);
-    // eslint-disable-next-line
     const store = app._store
     return store;
 }
@@ -63,27 +62,20 @@ export default function withDva(...args) {
             } = props;
             const ConnectedComponent = connect(...args)(Component);
             return React.createElement(
-                Provider,
-                // in client side, it will init store with the initial state tranfer from server side
-                {
+                Provider, {
                     store: store && store.dispatch ? store : getOrCreateStore(initialState)
                 },
-                // transfer next.js's props to the page
                 React.createElement(ConnectedComponent, initialProps),
             );
         };
         ComponentWithDva.getInitialProps = async (props = {}) => {
-            // console.log('get......');
             const isServer = checkServer();
             const store = getOrCreateStore(props.req);
-            // call children's getInitialProps
-            // get initProps and transfer in to the page
             const initialProps = Component.getInitialProps ?
                 await Component.getInitialProps({ ...props,
                     isServer,
                     store
-                }) :
-                {};
+                }) : {};
             return {
                 store,
                 initialProps,
