@@ -13,7 +13,7 @@
 server {
 listen 80;
 server_name www.xxxx.com;
-root /Users/jimck/ReactProject/with-static-export/out;
+root "out output path" ;
 index index.html;
 }
 
