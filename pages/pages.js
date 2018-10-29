@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import WithDva from '../store/store';
-import Layout from '../layout/BasicLayout';
-
+import '../styles/pages/index.less';
 class Page extends React.Component {
   static async getInitialProps(props) {
     // first time run in server side
@@ -24,27 +23,25 @@ class Page extends React.Component {
     const { name, count } = index;
     // console.log('rendered!!');
     return (
-      <Layout title={`page页`}>
-        <div>
-          Hi,{name}!! &nbsp;
+      <div className="pages-content">
+        Hi,{name}!! &nbsp;
         <p>count:&nbsp; {count}</p>
-          <p>
-            <button onClick={() => { this.props.dispatch({ type: 'index/caculate', delta: count + 1 }); }} >
-              plus
+        <p>
+          <button onClick={() => { this.props.dispatch({ type: 'index/caculate', delta: count + 1 }); }} >
+            plus
           </button>
-          </p>
-          <p>
-            <button onClick={() => { this.props.dispatch({ type: 'index/caculate', delta: count - 2 }); }} >
-              minus
+        </p>
+        <p>
+          <button onClick={() => { this.props.dispatch({ type: 'index/caculate', delta: count - 2 }); }} >
+            minus
           </button>
-          </p>
-          <p>
-            <Link href="/users">
-              <a>Go to /users</a>
-            </Link>
-          </p>
-        </div>
-      </Layout>
+        </p>
+        <p>
+          <Link href="/users">
+            <a>Go to /users</a>
+          </Link>
+        </p>
+      </div>
     );
   }
 }

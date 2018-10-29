@@ -8,5 +8,6 @@
                 "dva": "dva-no-router"
             }
         }]
-    ]
+    ],
+    "ignore": []
 }

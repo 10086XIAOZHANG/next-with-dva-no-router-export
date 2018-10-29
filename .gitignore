@@ -1,3 +1,10 @@
-/node_modules/
-/.next/
+*.iml
+/node_modules
+dist
+build
+.env
+.next
+.idea
+.DS_Store
+_MACOSX
 /package-lock.json/

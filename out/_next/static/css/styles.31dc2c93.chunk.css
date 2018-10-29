@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+}
+
+ul,
+li {
+  list-style: circle;
+  width: 1.333333rem;
+  text-align: left;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  line-height: 2;
+}
+
+h1 {
+  margin: 0.266667rem 0;
+}
+
+.menu {
+  line-height: 1.8;
+  margin-top: 0.133333rem;
+}
+
+.menu a {
+  color: #999;
+}
